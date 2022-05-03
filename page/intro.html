@@ -5,13 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO TEST</title>
+    <link rel="stylesheet" href="../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <style>
       body {
+        background: #c1d72e;
+      }
+      .header {
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        border-bottom: 1px solid #000; /*임시*/
+      }
+      .header .menu {
+        float: right;
+        margin-right: 20px;
+        font-size: 40px;
+        line-height: 60px;
+      }
+      .intro__circle {
+        width: 600px;
+        height: 600px;
+        background: #d4dd9c;
+        border-radius: 50%;
+        border: 10px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .intro__circle span {
+        font-family: "Josefin Sans";
+        font-size: 50px;
+        transform: rotate(-20deg);
+        color: #fff;
+        text-align: center;
+      }
+      .intro__wrap {
+        width: 100%;
+        height: 5000px; /*임시*/
         background: #c1d72e;
       }
     </style>
   </head>
   <body>
-    intro
+    <header class="header">
+      <button class="material-icons menu">menu</button>
+    </header>
+    <div class="intro__wrap">
+      <div class="intro__circle">
+        <span
+          >Grind Hard, Shine Hard.<br />
+          – Dwayne Johnson</span
+        >
+      </div>
+    </div>
   </body>
 </html>
