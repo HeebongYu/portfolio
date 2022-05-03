@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PORTFOLIO TEST</title>
     <link rel="stylesheet" href="../assets/css/fonts.css" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
@@ -16,17 +16,33 @@
         background: #c1d72e;
         width: 100vw;
         height: 100vh;
+        position: relative;
       }
       .introLo__text {
         font-family: "Hahmlet";
         font-size: 50px;
         color: #222;
         font-weight: 200;
-        text-align: center;
-        line-height: 100vh;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
       }
-      .introLo__text strong {
-        font-weight: 600;
+      .introLo__text::after {
+        content: "";
+        width: 1px;
+        height: 72px;
+        background: #000;
+        position: absolute;
+        right: -3px;
+        top: 0;
+        animation: blink 0.5s infinite;
+      }
+      @keyframes blink {
+        to {
+          opacity: 0;
+        }
       }
     </style>
   </head>
@@ -35,7 +51,6 @@
       <h1 class="introLo__text text">
         <!-- 즐기실 준비 됬나요? 먼저 <strong>저에</strong> 대하여 알고 가요. -->
       </h1>
-      <p class="text"></p>
     </div>
     <script>
       const content = "즐기실 준비 됬나요? 먼저 저에 대하여 알고 가요.";
