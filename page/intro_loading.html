@@ -17,10 +17,15 @@
         width: 100vw;
         height: 100vh;
         position: relative;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      .introLo__wrap.none {
+        opacity: 0;
       }
       .introLo__text {
         font-family: "Hahmlet";
-        font-size: 50px;
+        font-size: 4vw;
         color: #222;
         font-weight: 200;
         position: absolute;
@@ -32,11 +37,11 @@
       .introLo__text::after {
         content: "";
         width: 1px;
-        height: 72px;
+        height: 4vw;
         background: #000;
         position: absolute;
         right: -3px;
-        top: 0;
+        top: 1.1vw;
         animation: blink 0.5s infinite;
       }
       @keyframes blink {
@@ -49,12 +54,14 @@
   <body>
     <div class="introLo__wrap">
       <h1 class="introLo__text">
-        <!-- 즐기실 준비 됬나요? 먼저 <strong>저에</strong> 대하여 알고 가요. -->
+        <!-- 즐기실 준비 됬나요? 먼저 저에 대하여 알고 가요. -->
       </h1>
     </div>
     <script>
-      const content = "즐기실 준비 됬나요? 먼저 저에 대하여 알고 가요.";
+      const introLoWrap = document.querySelector(".introLo__wrap");
       const text = document.querySelector(".introLo__text");
+      const content = "즐기실 준비 됐나요? 먼저 저에 대하여 알고 가요.";
+
       let i = 0;
 
       function typing() {
@@ -66,9 +73,17 @@
       }
       setInterval(typing, 200);
 
+      function loadingEnd() {
+        introLoWrap.classList.add("none");
+      }
+
+      setTimeout(() => {
+        loadingEnd();
+      }, 6000);
+
       setTimeout(() => {
         location.href = "./intro.html";
-      }, 6000);
+      }, 6300);
     </script>
   </body>
 </html>
