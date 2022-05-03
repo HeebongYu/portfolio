@@ -61,7 +61,6 @@
       const introLoWrap = document.querySelector(".introLo__wrap");
       const text = document.querySelector(".introLo__text");
       const content = "즐기실 준비 됐나요? 먼저 저에 대하여 알고 가요.";
-
       let i = 0;
 
       function typing() {
@@ -73,12 +72,8 @@
       }
       setInterval(typing, 200);
 
-      function loadingEnd() {
-        introLoWrap.classList.add("none");
-      }
-
       setTimeout(() => {
-        loadingEnd();
+        introLoWrap.classList.add("none");
       }, 6000);
 
       setTimeout(() => {
