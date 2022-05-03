@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <style>
+      body {
+        background: #c1d72e;
+      }
       .introLo__wrap {
         background: #c1d72e;
         width: 100vw;
@@ -29,9 +32,28 @@
   </head>
   <body>
     <div class="introLo__wrap">
-      <h1 class="introLo__text">
-        즐기실 준비 됬나요? 먼저 <strong>저에</strong> 대하여 알고 가요.
+      <h1 class="introLo__text text">
+        <!-- 즐기실 준비 됬나요? 먼저 <strong>저에</strong> 대하여 알고 가요. -->
       </h1>
+      <p class="text"></p>
     </div>
+    <script>
+      const content = "즐기실 준비 됬나요? 먼저 저에 대하여 알고 가요.";
+      const text = document.querySelector(".text");
+      let i = 0;
+
+      function typing() {
+        if (i < content.length) {
+          let txt = content.charAt(i);
+          text.innerHTML += txt;
+          i++;
+        }
+      }
+      setInterval(typing, 200);
+
+      setTimeout(() => {
+        location.href = "./intro.html";
+      }, 6000);
+    </script>
   </body>
 </html>
