@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
     <style>
+      /* body */
       body {
         background: #c1d72e;
         opacity: 0;
@@ -27,6 +28,8 @@
         overflow: auto;
         height: auto;
       }
+
+      /* header */
       .header {
         width: 100%;
         height: 60px;
@@ -41,12 +44,35 @@
         font-size: 40px;
         line-height: 60px;
       }
+      .header.none {
+        display: none;
+      }
+
+      /* intro__wrap */
       .intro__wrap {
         width: 100%;
-        height: 5000px; /*임시*/
         background: #c1d72e;
         position: relative;
       }
+      /* .intro__wrap .background {
+        z-index: 2000;
+      }
+      .intro__wrap .content {
+        z-index: -1;
+      } */
+      .intro__wrap .background.none,
+      .intro__wrap .content.none .intro__container,
+      .intro__wrap .content.none .intro__section2,
+      .intro__wrap .content.none .intro__container2,
+      .intro__wrap .content.none .intro__container3,
+      .intro__wrap .content.none .intro__container4,
+      .intro__wrap .content.none .intro__section6 .img05,
+      .intro__wrap .content.none .intro__section6 .box2,
+      .intro__wrap .content.none .intro__section6 .cans {
+        display: none;
+      }
+
+      /* intro__circle */
       .intro__circle {
         position: absolute;
         left: 0;
@@ -62,7 +88,16 @@
         animation: Rotation 5s infinite ease-in-out;
       }
       .intro__circle.circle1 {
-        top: calc(-5vw - 60px);
+        top: calc(-8vw - 60px);
+        left: -5vw;
+      }
+      .intro__circle.circle2 {
+        top: 170vw;
+        right: 5vw;
+        left: auto;
+      }
+      .intro__circle.circle3 {
+        top: 300vw;
         left: -5vw;
       }
       .intro__circle span {
@@ -91,6 +126,8 @@
           transform: rotate(360deg);
         }
       }
+
+      /* intro__side */
       .intro__side {
         position: absolute;
         right: 0;
@@ -98,13 +135,17 @@
         writing-mode: vertical-rl;
       }
       .intro__side.side1 {
-        right: 0.8vw;
+        right: 0;
         top: calc(-0.8vw - 60px);
       }
       .intro__side.side2 {
         right: auto;
         left: -0.2vw;
-        top: 110vw;
+        top: 120vw;
+      }
+      .intro__side.side3 {
+        right: 0;
+        top: 240vw;
       }
       .intro__side span {
         font-family: "Josefin Sans";
@@ -115,6 +156,8 @@
         white-space: nowrap;
         word-spacing: -0.4ch;
       }
+
+      /* intro__section1 */
       .intro__container {
         max-width: 1200px;
         width: 98%;
@@ -147,12 +190,15 @@
         font-size: 2.6vw;
         font-family: "Hahmlet";
       }
+
+      /* intro__section2 */
       .intro__section2 {
         position: absolute;
         top: 70vw;
         width: 100%;
         display: flex;
         justify-content: space-between;
+        overflow: hidden;
       }
       .intro__section2 .side span {
         font-family: "Josefin Sans";
@@ -168,7 +214,10 @@
         height: auto;
         margin-right: 15%;
         transform: rotate(300deg);
+        margin-top: 1.2vw;
       }
+
+      /* intro__section3 */
       .intro__container2 {
         max-width: 1200px;
         width: 98%;
@@ -177,9 +226,6 @@
         top: 120vw;
         left: 50%;
         transform: translateX(-50%);
-
-        background: #000; /*임시*/
-        opacity: 0.7; /*임시*/
       }
       .intro__section3 {
         display: flex;
@@ -211,6 +257,176 @@
         right: 4vw;
         bottom: 4vw;
       }
+
+      /* intro__section4 */
+      .intro__container3 {
+        max-width: 1200px;
+        width: 98%;
+        margin: 0 auto;
+        position: absolute;
+        top: 190vw;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .intro__section4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .intro__section4 .img04 {
+        width: 50%;
+        height: auto;
+      }
+      .intro__section4 .box {
+        margin-top: 30px;
+        background: #d4dd9c;
+        border: 10px solid #fff;
+        width: 100%;
+        color: #fff;
+        font-family: "Josefin Sans";
+        font-size: 8vw;
+        font-weight: 700;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* intro__section5 */
+      .intro__container4 {
+        max-width: 1200px;
+        width: 98%;
+        margin: 0 auto;
+        position: absolute;
+        top: calc(240vw + 300px);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .intro__section5 {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+      }
+      .intro__section5 .photo03 {
+        width: 50%;
+        height: auto;
+      }
+      .intro__section5 .left {
+        color: #fff;
+        font-family: "Hahmlet";
+        text-align: left;
+        margin-left: 2vw;
+        position: relative;
+      }
+      .intro__section5 .left .title {
+        font-size: 2.6vw;
+      }
+      .intro__section5 .left .desc {
+        margin-top: 5vw;
+        font-size: 1.6vw;
+        line-height: 4vw;
+      }
+      .intro__section5 .left .img03 {
+        width: 16vw;
+        height: auto;
+        position: absolute;
+        left: 4vw;
+        bottom: 4vw;
+      }
+
+      /* intro__section6 */
+      .intro__container5 {
+        max-width: 1200px;
+        width: 98%;
+        margin: 0 auto;
+        position: absolute;
+        top: calc(300vw + 400px);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .intro__section6 {
+        overflow: hidden;
+      }
+      .intro__section6 .img05 {
+        float: right;
+        width: 70%;
+        height: auto;
+        margin-bottom: 5vw;
+      }
+      .intro__section6 .box2 {
+        display: inline-block;
+        background: #d4dd9c;
+        border: 10px solid #fff;
+        width: 60%;
+        color: #fff;
+        font-family: "Josefin Sans";
+        font-size: 8vw;
+        font-weight: 700;
+        padding: 1vw 1vw 0.6vw 1vw;
+        text-align: center;
+      }
+      .intro__section6 .cans {
+        margin-top: 2.6vw;
+        width: 100%;
+        height: 300px;
+
+        background: rgb(20, 9, 236); /*임시*/
+        opacity: 0.6; /*임시*/
+      }
+      .intro__section6 .next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .intro__section6 .btn:hover {
+        background: #f96f55;
+      }
+      .intro__section6 .btn {
+        font-family: "Josefin Sans";
+        text-align: center;
+        font-size: 2.6vw;
+        font-weight: 300;
+        background: #c1d72e;
+        border: 3px solid #222;
+        border-radius: 50px;
+        cursor: pointer;
+        width: 20vw;
+        height: 5.4vw;
+        transition: all 1s;
+        position: relative;
+        margin-top: 5vw;
+        margin-bottom: 15vw;
+      }
+      .intro__section6 .btn span {
+        opacity: 1;
+        transition: all 0.5s;
+        position: absolute;
+        top: 30%;
+        transform: translate(-50%);
+      }
+      .intro__container5.active {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .intro__container5.active .intro__section6 .btn {
+        background: #f96f55;
+        border: 0;
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        height: 100vh;
+      }
+      .intro__container5.active .intro__section6 .btn span {
+        opacity: 0;
+      }
+
+      /* 미디어쿼리 */
       @media (max-width: 1600px) {
         .intro__circle,
         .intro__side {
@@ -227,7 +443,9 @@
         .intro__section1 .photo01 {
           width: 100%;
         }
-        .intro__section1 .img01 {
+        .intro__section1 .img01,
+        .intro__section2,
+        .intro__container3 {
           display: none;
         }
         .intro__section1 .text {
@@ -237,21 +455,35 @@
           text-align: center;
           font-size: 4vw;
         }
-        .intro__section2 {
-          display: none;
-        }
         .intro__container2 {
           top: 140vw;
         }
+        .intro__container4 {
+          top: 220vw;
+        }
+        .intro__container5 {
+          top: 300vw;
+        }
       }
+
+      /* .background,
+      .intro__container,
+      .intro__section2,
+      .intro__container2,
+      .intro__container3,
+      .intro__container4 {
+        display: none;
+      } */
     </style>
   </head>
   <body>
     <header class="header">
       <button class="material-icons menu">menu</button>
     </header>
-    <div class="intro__wrap">
-      <div>
+    <!-- //header -->
+
+    <main class="intro__wrap">
+      <div class="background">
         <div class="intro__circle circle1">
           <span
             >Grind Hard, Shine Hard.<br />
@@ -259,6 +491,22 @@
           >
         </div>
         <!-- //intro__circle01 -->
+
+        <div class="intro__circle circle2">
+          <span
+            >Grind Hard, Shine Hard.<br />
+            – Dwayne Johnson</span
+          >
+        </div>
+        <!-- //intro__circle02 -->
+
+        <div class="intro__circle circle3">
+          <span
+            >Grind Hard, Shine Hard.<br />
+            – Dwayne Johnson</span
+          >
+        </div>
+        <!-- //intro__circle03 -->
 
         <div class="intro__side side1">
           <span
@@ -275,10 +523,18 @@
           >
         </div>
         <!-- //intro__side02 -->
-      </div>
-      <!-- //배경 -->
 
-      <div>
+        <div class="intro__side side3">
+          <span
+            >It is kind of fun to do the <br />
+            impossible. — Walt Disney</span
+          >
+        </div>
+        <!-- //intro__side03 -->
+      </div>
+      <!-- //background -->
+
+      <div class="content">
         <div class="intro__container">
           <section class="intro__section1">
             <img src="../assets/img/photo01.png" alt="사진01" class="photo01" />
@@ -287,7 +543,6 @@
           </section>
         </div>
         <!-- //intro__section1 -->
-
         <section class="intro__section2">
           <div class="side">
             <span
@@ -299,7 +554,6 @@
           <img src="../assets/img/img02.png" alt="이미지02" class="img02" />
         </section>
         <!-- //intro__section2 -->
-
         <div class="intro__container2">
           <section class="intro__section3">
             <img src="../assets/img/photo02.png" alt="사진02" class="photo02" />
@@ -316,9 +570,49 @@
           </section>
         </div>
         <!-- //intro__section3 -->
+        <div class="intro__container3">
+          <section class="intro__section4">
+            <img src="../assets/img/img04.png" alt="이미지04" class="img04" />
+            <div class="box">Carpe diem</div>
+          </section>
+        </div>
+        <!-- //intro__section4 -->
+        <div class="intro__container4">
+          <section class="intro__section5">
+            <img src="../assets/img/photo03.png" alt="사진03" class="photo03" />
+            <div class="left">
+              <div class="title">랄랄라</div>
+              <div class="desc">
+                난 오늘은 즐길래 내일은 몰라<br />
+                하고 싶은 것 마음대로 골라<br />
+                자! 놀자 또 놀자<br />
+                지나간 얘기들은 이제 그만
+              </div>
+              <img src="../assets/img/img03.png" alt="이미지03" class="img03" />
+            </div>
+          </section>
+        </div>
+        <!-- //intro__section5 -->
+        <div class="intro__container5">
+          <section class="intro__section6">
+            <img src="../assets/img/img05.png" alt="이미지05" class="img05" />
+            <div class="box2">I can do</div>
+            <div class="cans">
+              <div class="can can01"></div>
+            </div>
+            <div class="next">
+              <div class="btn">
+                <span>ENJOY</span>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- //intro__section6 -->
       </div>
-      <!-- //내용 -->
-    </div>
+      <!-- //content -->
+    </main>
+    <!-- //intro__wrap -->
+
     <script>
       (function () {
         setTimeout(() => {
@@ -327,7 +621,42 @@
         }, 100);
       })();
 
-      const introCircle = document.querySelectorAll(".intro__circle");
+      const introSection4Box = document.querySelector(".intro__section4 .box");
+      introSection4Box.addEventListener("mouseenter", () => {
+        console.log(introSection4Box.innerText);
+        introSection4Box.innerText = "현재 이 순간에 충실하라";
+        introSection4Box.style.fontSize = "5vw";
+        introSection4Box.style.fontFamily = "Hahmlet";
+      });
+      introSection4Box.addEventListener("mouseleave", () => {
+        console.log(introSection4Box.innerText);
+        introSection4Box.innerText = "Carpe diem";
+        introSection4Box.style.fontSize = "8vw";
+        introSection4Box.style.fontFamily = "Josefin Sans";
+      });
+
+      const header = document.querySelector(".header");
+      const background = document.querySelector(".background");
+      const content = document.querySelector(".content");
+      const introContainer5 = document.querySelector(".intro__container5");
+      const introSection6Btn = document.querySelector(".intro__section6 .btn");
+
+      // .background,
+      // .intro__container,
+      // .intro__section2,
+      // .intro__container2,
+      // .intro__container3,
+      // .intro__container4
+
+      introSection6Btn.addEventListener("click", () => {
+        header.classList.add("none");
+        background.classList.add("none");
+        content.classList.add("none");
+        introContainer5.classList.add("active");
+        setTimeout(() => {
+          location.href = "./cont_loading.html";
+        }, 1000);
+      });
     </script>
   </body>
 </html>

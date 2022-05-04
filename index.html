@@ -91,9 +91,9 @@
       const openBtn = document.querySelector(".open__btn");
 
       openBtn.addEventListener("click", () => {
-        openBtn.classList.add("active");
         openTitle.classList.add("none");
         openDesc.classList.add("none");
+        openBtn.classList.add("active");
         setTimeout(() => {
           location.href = "./page/intro_loading.html";
         }, 1000);
