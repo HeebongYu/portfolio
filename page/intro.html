@@ -465,15 +465,6 @@
           top: 300vw;
         }
       }
-
-      /* .background,
-      .intro__container,
-      .intro__section2,
-      .intro__container2,
-      .intro__container3,
-      .intro__container4 {
-        display: none;
-      } */
     </style>
   </head>
   <body>
@@ -491,7 +482,6 @@
           >
         </div>
         <!-- //intro__circle01 -->
-
         <div class="intro__circle circle2">
           <span
             >Grind Hard, Shine Hard.<br />
@@ -499,7 +489,6 @@
           >
         </div>
         <!-- //intro__circle02 -->
-
         <div class="intro__circle circle3">
           <span
             >Grind Hard, Shine Hard.<br />
@@ -507,7 +496,6 @@
           >
         </div>
         <!-- //intro__circle03 -->
-
         <div class="intro__side side1">
           <span
             >It is kind of fun to do the <br />
@@ -515,7 +503,6 @@
           >
         </div>
         <!-- //intro__side01 -->
-
         <div class="intro__side side2">
           <span
             >It is kind of fun to do the <br />
@@ -523,7 +510,6 @@
           >
         </div>
         <!-- //intro__side02 -->
-
         <div class="intro__side side3">
           <span
             >It is kind of fun to do the <br />
@@ -533,7 +519,6 @@
         <!-- //intro__side03 -->
       </div>
       <!-- //background -->
-
       <div class="content">
         <div class="intro__container">
           <section class="intro__section1">
@@ -613,7 +598,9 @@
     </main>
     <!-- //intro__wrap -->
 
+    <!-- script -->
     <script>
+      // 즉시실행
       (function () {
         setTimeout(() => {
           document.body.classList.add("show");
@@ -621,6 +608,7 @@
         }, 100);
       })();
 
+      // 마우스 오버
       const introSection4Box = document.querySelector(".intro__section4 .box");
       introSection4Box.addEventListener("mouseenter", () => {
         console.log(introSection4Box.innerText);
@@ -635,19 +623,12 @@
         introSection4Box.style.fontFamily = "Josefin Sans";
       });
 
+      // 페이지 이동
       const header = document.querySelector(".header");
       const background = document.querySelector(".background");
       const content = document.querySelector(".content");
       const introContainer5 = document.querySelector(".intro__container5");
       const introSection6Btn = document.querySelector(".intro__section6 .btn");
-
-      // .background,
-      // .intro__container,
-      // .intro__section2,
-      // .intro__container2,
-      // .intro__container3,
-      // .intro__container4
-
       introSection6Btn.addEventListener("click", () => {
         header.classList.add("none");
         background.classList.add("none");

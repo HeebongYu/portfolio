@@ -49,6 +49,7 @@
         display: none;
       }
 
+      /* 임시 */
       /* cont__wrap */
       .cont__wrap {
         width: 100%;
@@ -71,14 +72,17 @@
     <main class="cont__wrap">
       <h1>cont</h1>
     </main>
-  </body>
+    <!-- //cont__wrap -->
 
-  <script>
-    (function () {
-      setTimeout(() => {
-        document.body.classList.add("show");
-        scrollTo(0, 0);
-      }, 100);
-    })();
-  </script>
+    <!-- script -->
+    <script>
+      // 즉시실행
+      (function () {
+        setTimeout(() => {
+          document.body.classList.add("show");
+          scrollTo(0, 0);
+        }, 100);
+      })();
+    </script>
+  </body>
 </html>

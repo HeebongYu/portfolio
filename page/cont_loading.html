@@ -57,12 +57,14 @@
         <!-- 즐기실 준비 됬나요? 먼저 저에 대하여 알고 가요. -->
       </h1>
     </div>
+    <!-- //introLo__wrap -->
+
+    <!-- script -->
     <script>
-      const introLoWrap = document.querySelector(".introLo__wrap");
+      // 타이핑 효과
       const text = document.querySelector(".introLo__text");
       const content = "이제 컨텐츠들을 즐기러 가요.";
       let i = 0;
-
       function typing() {
         if (i < content.length) {
           let txt = content.charAt(i);
@@ -72,10 +74,11 @@
       }
       setInterval(typing, 200);
 
+      // 페이지 이동
+      const introLoWrap = document.querySelector(".introLo__wrap");
       setTimeout(() => {
         introLoWrap.classList.add("none");
       }, 3400);
-
       setTimeout(() => {
         location.href = "./cont.html";
       }, 3700);
