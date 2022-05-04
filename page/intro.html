@@ -34,7 +34,6 @@
         z-index: 9999;
         left: 0;
         top: 0;
-        /*border-bottom: 1px solid #000; 임시*/
       }
       .header .menu {
         float: right;
@@ -102,6 +101,11 @@
         right: 0.8vw;
         top: calc(-0.8vw - 60px);
       }
+      .intro__side.side2 {
+        right: auto;
+        left: -0.2vw;
+        top: 110vw;
+      }
       .intro__side span {
         font-family: "Josefin Sans";
         font-weight: 700;
@@ -119,9 +123,6 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-
-        /*background: #000; 임시*/
-        /*opacity: 0.7; 임시*/
       }
       .intro__section1 {
         display: flex;
@@ -152,9 +153,6 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-
-        /*background: #000; 임시*/
-        /*opacity: 0.7; 임시*/
       }
       .intro__section2 .side span {
         font-family: "Josefin Sans";
@@ -168,13 +166,58 @@
       .intro__section2 .img02 {
         width: 20vw;
         height: auto;
-        margin-right: 10%;
+        margin-right: 15%;
         transform: rotate(300deg);
+      }
+      .intro__container2 {
+        max-width: 1200px;
+        width: 98%;
+        margin: 0 auto;
+        position: absolute;
+        top: 120vw;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background: #000; /*임시*/
+        opacity: 0.7; /*임시*/
+      }
+      .intro__section3 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .intro__section3 .photo02 {
+        width: 50%;
+        height: auto;
+      }
+      .intro__section3 .right {
+        color: #fff;
+        font-family: "Hahmlet";
+        text-align: right;
+        margin-right: 2vw;
+        position: relative;
+      }
+      .intro__section3 .right .title {
+        font-size: 2.6vw;
+      }
+      .intro__section3 .right .desc {
+        margin-top: 5vw;
+        font-size: 1.6vw;
+        line-height: 4vw;
+      }
+      .intro__section3 .right .img03 {
+        width: 16vw;
+        height: auto;
+        position: absolute;
+        right: 4vw;
+        bottom: 4vw;
       }
       @media (max-width: 1600px) {
         .intro__circle,
         .intro__side {
           display: none;
+        }
+        .intro__section2 .img02 {
+          margin-right: 5%;
         }
       }
       @media (max-width: 600px) {
@@ -194,8 +237,10 @@
           text-align: center;
           font-size: 4vw;
         }
-        .intro__section2,
-        .intro__side2.side1 {
+        .intro__section2 {
+          display: none;
+        }
+        .intro__container2 {
           top: 140vw;
         }
       }
@@ -206,44 +251,73 @@
       <button class="material-icons menu">menu</button>
     </header>
     <div class="intro__wrap">
-      <div class="intro__circle circle1">
-        <span
-          >Grind Hard, Shine Hard.<br />
-          – Dwayne Johnson</span
-        >
-      </div>
-      <!-- //intro__circle -->
-
-      <div class="intro__side side1">
-        <span
-          >It is kind of fun to do the <br />
-          impossible. — Walt Disney</span
-        >
-      </div>
-      <!-- //intro__side -->
-
-      <div class="intro__container">
-        <section class="intro__section1">
-          <img src="../assets/img/photo01.png" alt="사진01" class="photo01" />
-          <img src="../assets/img/img01.png" alt="이미지01" class="img01" />
-          <p class="text">프론트엔드 꿈나무 유희봉</p>
-        </section>
-      </div>
-      <!-- //intro__section1 -->
-
-      <section class="intro__section2">
-        <div class="side">
+      <div>
+        <div class="intro__circle circle1">
           <span
-            >The way you spend<br />
-            the time defines<br />
-            who you are.</span
+            >Grind Hard, Shine Hard.<br />
+            – Dwayne Johnson</span
           >
         </div>
-        <img src="../assets/img/img02.png" alt="이미지02" class="img02" />
-      </section>
-      <!-- //intro__section2 -->
+        <!-- //intro__circle01 -->
 
-      <div class="intro__container2"></div>
+        <div class="intro__side side1">
+          <span
+            >It is kind of fun to do the <br />
+            impossible. — Walt Disney</span
+          >
+        </div>
+        <!-- //intro__side01 -->
+
+        <div class="intro__side side2">
+          <span
+            >It is kind of fun to do the <br />
+            impossible. — Walt Disney</span
+          >
+        </div>
+        <!-- //intro__side02 -->
+      </div>
+      <!-- //배경 -->
+
+      <div>
+        <div class="intro__container">
+          <section class="intro__section1">
+            <img src="../assets/img/photo01.png" alt="사진01" class="photo01" />
+            <img src="../assets/img/img01.png" alt="이미지01" class="img01" />
+            <p class="text">프론트엔드 꿈나무 유희봉</p>
+          </section>
+        </div>
+        <!-- //intro__section1 -->
+
+        <section class="intro__section2">
+          <div class="side">
+            <span
+              >The way you spend<br />
+              the time defines<br />
+              who you are.</span
+            >
+          </div>
+          <img src="../assets/img/img02.png" alt="이미지02" class="img02" />
+        </section>
+        <!-- //intro__section2 -->
+
+        <div class="intro__container2">
+          <section class="intro__section3">
+            <img src="../assets/img/photo02.png" alt="사진02" class="photo02" />
+            <div class="right">
+              <div class="title">나에게로 떠나는 여행</div>
+              <div class="desc">
+                저 푸른 바다 끝까지 말을 달리면<br />
+                소금 같은 별이 떠 있고<br />
+                사막엔 낙타만이 가는 길<br />
+                무수한 사랑 길이 되어 열어줄거야
+              </div>
+              <img src="../assets/img/img03.png" alt="이미지03" class="img03" />
+            </div>
+          </section>
+        </div>
+        <!-- //intro__section3 -->
+      </div>
+      <!-- //내용 -->
     </div>
     <script>
       (function () {
