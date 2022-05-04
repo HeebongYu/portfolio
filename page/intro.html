@@ -34,7 +34,7 @@
         z-index: 9999;
         left: 0;
         top: 0;
-        border-bottom: 1px solid #000; /*임시*/
+        /*border-bottom: 1px solid #000; 임시*/
       }
       .header .menu {
         float: right;
@@ -60,6 +60,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        animation: Rotation 5s infinite ease-in-out;
       }
       .intro__circle.circle1 {
         top: calc(-5vw - 60px);
@@ -74,6 +75,23 @@
         text-align: center;
         white-space: nowrap;
       }
+      @keyframes Rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(90deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        75% {
+          transform: rotate(270deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
       .intro__side {
         position: absolute;
         right: 0;
@@ -81,19 +99,19 @@
         writing-mode: vertical-rl;
       }
       .intro__side.side1 {
-        right: 2vw;
+        right: 0.8vw;
         top: calc(-0.8vw - 60px);
       }
       .intro__side span {
         font-family: "Josefin Sans";
         font-weight: 700;
         font-size: 8vw;
-        line-height: 100px;
+        line-height: calc(25% -300px);
         color: #fff;
         white-space: nowrap;
         word-spacing: -0.4ch;
       }
-      .intro__section__wrap {
+      .intro__container {
         max-width: 1200px;
         width: 98%;
         margin: 0 auto;
@@ -102,13 +120,13 @@
         left: 50%;
         transform: translateX(-50%);
 
-        background: #000; /*임시*/
-        height: 5000px; /*임시*/
-        opacity: 0.7; /*임시*/
+        /*background: #000; 임시*/
+        /*opacity: 0.7; 임시*/
       }
       .intro__section1 {
         display: flex;
         justify-content: space-between;
+        position: relative;
       }
       .intro__section1 .photo01 {
         margin-top: 15vw;
@@ -118,14 +136,69 @@
       .intro__section1 .img01 {
         width: 20vw;
         height: 20vw;
+        margin-right: 6%;
       }
+      .intro__section1 .text {
+        position: absolute;
+        left: 54%;
+        bottom: 0;
+        color: #fff;
+        font-size: 2.6vw;
+        font-family: "Hahmlet";
+      }
+      .intro__section2 {
+        position: absolute;
+        top: 70vw;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
 
+        /*background: #000; 임시*/
+        /*opacity: 0.7; 임시*/
+      }
+      .intro__section2 .side span {
+        font-family: "Josefin Sans";
+        font-weight: 700;
+        font-size: 6.2vw;
+        color: #fff;
+        white-space: nowrap;
+        word-spacing: -0.4ch;
+        margin-left: -0.6vw;
+      }
+      .intro__section2 .img02 {
+        width: 20vw;
+        height: auto;
+        margin-right: 10%;
+        transform: rotate(300deg);
+      }
       @media (max-width: 1600px) {
         .intro__circle,
         .intro__side {
           display: none;
         }
-      } ;
+      }
+      @media (max-width: 600px) {
+        .intro__section1 {
+          flex-direction: column;
+        }
+        .intro__section1 .photo01 {
+          width: 100%;
+        }
+        .intro__section1 .img01 {
+          display: none;
+        }
+        .intro__section1 .text {
+          position: inherit;
+          left: auto;
+          bottom: auto;
+          text-align: center;
+          font-size: 4vw;
+        }
+        .intro__section2,
+        .intro__side2.side1 {
+          top: 140vw;
+        }
+      }
     </style>
   </head>
   <body>
@@ -147,15 +220,30 @@
           impossible. — Walt Disney</span
         >
       </div>
-      <!-- //intro__circle -->
+      <!-- //intro__side -->
 
-      <div class="intro__section__wrap">
+      <div class="intro__container">
         <section class="intro__section1">
           <img src="../assets/img/photo01.png" alt="사진01" class="photo01" />
           <img src="../assets/img/img01.png" alt="이미지01" class="img01" />
+          <p class="text">프론트엔드 꿈나무 유희봉</p>
         </section>
       </div>
-      <!-- //intro__section__wrap -->
+      <!-- //intro__section1 -->
+
+      <section class="intro__section2">
+        <div class="side">
+          <span
+            >The way you spend<br />
+            the time defines<br />
+            who you are.</span
+          >
+        </div>
+        <img src="../assets/img/img02.png" alt="이미지02" class="img02" />
+      </section>
+      <!-- //intro__section2 -->
+
+      <div class="intro__container2"></div>
     </div>
     <script>
       (function () {
@@ -164,6 +252,8 @@
           scrollTo(0, 0);
         }, 100);
       })();
+
+      const introCircle = document.querySelectorAll(".intro__circle");
     </script>
   </body>
 </html>
