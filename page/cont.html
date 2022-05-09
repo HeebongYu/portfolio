@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PORTFOLIO TEST</title>
 
     <link rel="stylesheet" href="../assets/css/fonts.css" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
@@ -14,75 +14,177 @@
       rel="stylesheet"
     />
     <style>
-      /* body */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         background: #f96f55;
-        opacity: 0;
-        transform: scale(0);
-        transition: all 1s;
-        overflow: hidden;
-        height: 100%;
       }
-      body.show {
-        opacity: 1;
-        transform: scale(1);
-        overflow: auto;
-        height: auto;
-      }
-
-      /* header */
       .header {
+        position: fixed;
         width: 100%;
         height: 60px;
-        position: sticky;
-        z-index: 9999;
-        left: 0;
-        top: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+
+        border-bottom: 1px solid #000;
+      }
+      .header .dots {
+        display: flex;
+        margin-top: 28px;
+        margin-left: 20px;
+      }
+      .header .dots .dot {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #e1ada1;
+        margin-left: 10px;
+      }
+      #dot01.active {
+        background: #9c1f00;
+      }
+      #dot02.active {
+        background: #9c1f00;
+      }
+      #dot03.active {
+        background: #9c1f00;
+      }
+      #dot04.active {
+        background: #9c1f00;
+      }
+      #dot05.active {
+        background: #9c1f00;
+      }
+      #dot06.active {
+        background: #9c1f00;
       }
       .header .menu {
-        float: right;
         margin-right: 20px;
         font-size: 40px;
         line-height: 60px;
       }
-      .header.none {
-        display: none;
-      }
 
-      /* 임시 */
-      /* cont__wrap */
       .cont__wrap {
+        background: #f96f55;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 600%;
+      }
+      .cont__item {
         width: 100%;
         height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+        /*임시*/
+        border: 5px solid #000;
+        box-sizing: border-box;
       }
-      .cont__wrap h1 {
-        font-size: 30vw;
+      .item01 {
+      }
+      .item02 {
+      }
+      .item03 {
+      }
+      .item04 {
+      }
+      .item05 {
+      }
+      .item06 {
       }
     </style>
   </head>
   <body>
     <header class="header">
+      <div class="dots">
+        <div id="dot01" class="dot"></div>
+        <div id="dot02" class="dot"></div>
+        <div id="dot03" class="dot"></div>
+        <div id="dot04" class="dot"></div>
+        <div id="dot05" class="dot"></div>
+        <div id="dot06" class="dot"></div>
+      </div>
       <button class="material-icons menu">menu</button>
     </header>
-    <!-- //header -->
-
     <main class="cont__wrap">
-      <h1>cont</h1>
+      <section id="item01" class="cont__item">1</section>
+      <section id="item02" class="cont__item">2</section>
+      <section id="item03" class="cont__item">3</section>
+      <section id="item04" class="cont__item">4</section>
+      <section id="item05" class="cont__item">5</section>
+      <section id="item06" class="cont__item">6</section>
     </main>
-    <!-- //cont__wrap -->
 
-    <!-- script -->
     <script>
-      // 즉시실행
-      (function () {
-        setTimeout(() => {
-          document.body.classList.add("show");
-          scrollTo(0, 0);
-        }, 100);
-      })();
+      // 가로모드
+      const contWrap = document.querySelector(".cont__wrap");
+      const contItem = document.querySelector(".cont__item");
+
+      function scroll() {
+        // 스크롤 이동
+        let scrollTop = document.documentElement.scrollTop;
+        let contWidth = contWrap.offsetWidth;
+        let viewWidth = contWidth - window.innerWidth;
+        let viewHeight = contWidth - window.innerHeight;
+        document.body.style.height = contWidth + "px";
+        contWrap.style.left = -scrollTop * (viewWidth / viewHeight) + "px";
+
+        // 닷 이동
+        const dot01 = document.querySelector("#dot01");
+        const dot02 = document.getElementById("dot02");
+        const dot03 = document.getElementById("dot03");
+        const dot04 = document.getElementById("dot04");
+        const dot05 = document.getElementById("dot05");
+        const dot06 = document.getElementById("dot06");
+        let contItemWidth = contItem.offsetWidth;
+        let itemHP = contItemWidth / (viewWidth / viewHeight);
+        dot01.addEventListener("click", () => {
+          window.scrollTo(0, itemHP * 0);
+        });
+        dot02.addEventListener("click", () => {
+          window.scrollTo(0, itemHP * 1);
+        });
+        dot03.addEventListener("click", () => {
+          window.scrollTo(0, itemHP * 2);
+        });
+        dot04.addEventListener("click", () => {
+          window.scrollTo(0, itemHP * 3);
+        });
+        dot05.addEventListener("click", () => {
+          window.scrollTo(0, itemHP * 4);
+        });
+        dot06.addEventListener("click", () => {
+          window.scrollTo(0, itemHP * 5);
+        });
+
+        // 닷 이동 active
+        console.log(contWrap.style.left.replace("px", ""));
+        console.log(itemHP * 1);
+        console.log(itemHP * 2);
+
+        if (contWrap.style.left.replace("px", "") <= itemHP * 1) {
+          remove();
+          dot01.classList.add("active");
+        }
+        if (itemHP * 1 < -contWrap.style.left.replace("px", "") <= itemHP * 2) {
+          remove();
+          dot02.classList.add("active");
+        }
+
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+
+      function remove() {
+        const dot = document.querySelectorAll(".dot");
+        dot.forEach((el) => {
+          el.classList.remove("active");
+        });
+      }
     </script>
   </body>
 </html>
