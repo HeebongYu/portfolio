@@ -22,6 +22,13 @@
       body {
         background: #f96f55;
       }
+
+      .aic {
+        display: flex;
+        align-items: center;
+      }
+
+      /* header */
       .header {
         position: fixed;
         width: 100%;
@@ -29,13 +36,16 @@
         z-index: 1;
         display: flex;
         justify-content: space-between;
-
-        border-bottom: 1px solid #000;
+      }
+      .header .menu {
+        margin-right: 20px;
+        font-size: 40px;
+        line-height: 60px;
       }
       .header .dots {
         display: flex;
         margin-top: 28px;
-        margin-left: 20px;
+        margin-left: 40px;
       }
       .header .dots .dot {
         width: 30px;
@@ -62,12 +72,8 @@
       #dot06.active {
         background: #9c1f00;
       }
-      .header .menu {
-        margin-right: 20px;
-        font-size: 40px;
-        line-height: 60px;
-      }
 
+      /* cont__wrap */
       .cont__wrap {
         background: #f96f55;
         position: fixed;
@@ -78,23 +84,112 @@
       }
       .cont__item {
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 60px);
+        margin-top: 60px;
 
         /*임시*/
         border: 5px solid #000;
         box-sizing: border-box;
       }
-      .item01 {
+
+      /* item01 */
+      #item01 .title {
+        font-family: "Josefin Sans";
+        color: #fff;
+        font-size: 11vw;
+        font-weight: 700;
+        margin-left: 50px;
+        margin-top: 110px;
+        word-spacing: -0.4ch;
       }
-      .item02 {
+      #item01 .quiz {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 5vw;
       }
-      .item03 {
+      #item01 .quiz img {
+        width: 25vw;
+        height: 25vw;
       }
-      .item04 {
+      #item01 .quiz img:nth-child(1) {
+        margin-left: 10vw;
+        margin-top: -2vw;
       }
-      .item05 {
+      #item01 .quiz img:nth-child(2) {
+        margin-top: -9vw;
       }
-      .item06 {
+      #item01 .quiz img:nth-child(3) {
+        margin-top: 3vw;
+      }
+
+      /* item02 */
+      #item02 {
+        position: relative;
+      }
+      #item02 .title {
+        position: absolute;
+        top: 50%;
+        left: -12%;
+        font-family: "Josefin Sans";
+        color: #fff;
+        font-size: 11vw;
+        font-weight: 700;
+        transform: rotate(-90deg) translateX(12%);
+        max-height: 80vh;
+      }
+      #item02 .layout {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+      }
+      #item02 .layout img {
+        width: 32vw;
+        height: 21vw;
+        margin: 1vw;
+      }
+
+      /* item03 */
+      #item03 .wrap {
+        margin: 0 auto;
+        width: 98%;
+        height: 100%;
+        display: flex;
+      }
+      #item03 .wrap .title {
+        font-family: "Josefin Sans";
+        color: #fff;
+        font-size: 10vw;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: -0.12em;
+      }
+      #item03 .reference {
+        flex: 0 0 55%;
+      }
+      #item03 .reference img {
+        width: 23vw;
+        height: 32vw;
+      }
+      #item03 .reference img:nth-child(2) {
+        margin-right: 2vw;
+      }
+      #item03 .illustrator {
+        flex: 0 0 45%;
+        position: relative;
+      }
+      #item03 .illustrator img {
+        width: 23vw;
+        height: 32vw;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #item03 .illustrator img:nth-child(3) {
+        opacity: 0.3;
       }
     </style>
   </head>
@@ -110,20 +205,59 @@
       </div>
       <button class="material-icons menu">menu</button>
     </header>
+    <!-- //header -->
+
     <main class="cont__wrap">
-      <section id="item01" class="cont__item">1</section>
-      <section id="item02" class="cont__item">2</section>
-      <section id="item03" class="cont__item">3</section>
-      <section id="item04" class="cont__item">4</section>
+      <section id="item01" class="cont__item">
+        <h2 class="title">QUIZ</h2>
+        <div class="quiz">
+          <img src="../assets/img/frame01.svg" alt="" />
+          <img src="../assets/img/frame01.svg" alt="" />
+          <img src="../assets/img/frame01.svg" alt="" />
+        </div>
+      </section>
+      <section id="item02" class="cont__item">
+        <h2 class="title">LAYOUT</h2>
+        <div class="layout">
+          <img src="../assets/img/frame02.svg" alt="" />
+          <img src="../assets/img/frame02.svg" alt="" />
+          <img src="../assets/img/frame02.svg" alt="" />
+          <img src="../assets/img/frame02.svg" alt="" />
+        </div>
+      </section>
+      <section id="item03" class="cont__item">
+        <div class="wrap">
+          <div class="reference">
+            <h2 class="title">REFERENCE</h2>
+            <img src="../assets/img/frame03.svg" alt="" />
+            <img src="../assets/img/frame03.svg" alt="" />
+          </div>
+          <div class="illustrator">
+            <h2 class="title">illustrator</h2>
+            <img src="../assets/img/drawing01.png" alt="" />
+            <img src="../assets/img/drawing02.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section id="item04" class="cont__item">
+        <div class="wrap">
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+        </div>
+      </section>
       <section id="item05" class="cont__item">5</section>
       <section id="item06" class="cont__item">6</section>
     </main>
+    <!-- //cont__wrap -->
 
+    <!-- script -->
     <script>
-      // 가로모드
       const contWrap = document.querySelector(".cont__wrap");
       const contItem = document.querySelector(".cont__item");
 
+      // 가로모드
       function scroll() {
         // 스크롤 이동
         let scrollTop = document.documentElement.scrollTop;
@@ -162,23 +296,44 @@
         });
 
         // 닷 이동 active
-        console.log(contWrap.style.left.replace("px", ""));
-        console.log(itemHP * 1);
-        console.log(itemHP * 2);
-
-        if (contWrap.style.left.replace("px", "") <= itemHP * 1) {
+        if (itemHP * 0 <= scrollTop && scrollTop < itemHP * 1 - 20) {
           remove();
           dot01.classList.add("active");
-        }
-        if (itemHP * 1 < -contWrap.style.left.replace("px", "") <= itemHP * 2) {
+        } else if (
+          itemHP * 1 - 20 <= scrollTop &&
+          scrollTop < itemHP * 2 - 20
+        ) {
           remove();
           dot02.classList.add("active");
+        } else if (
+          itemHP * 2 - 20 <= scrollTop &&
+          scrollTop < itemHP * 3 - 20
+        ) {
+          remove();
+          dot03.classList.add("active");
+        } else if (
+          itemHP * 3 - 20 <= scrollTop &&
+          scrollTop < itemHP * 4 - 20
+        ) {
+          remove();
+          dot04.classList.add("active");
+        } else if (
+          itemHP * 4 - 20 <= scrollTop &&
+          scrollTop < itemHP * 5 - 20
+        ) {
+          remove();
+          dot05.classList.add("active");
+        } else if (itemHP * 5 - 20 <= scrollTop) {
+          remove();
+          dot06.classList.add("active");
         }
 
+        // 스크롤 이동 감지
         requestAnimationFrame(scroll);
       }
       scroll();
 
+      // 지나간 닷 메뉴 비활성화
       function remove() {
         const dot = document.querySelectorAll(".dot");
         dot.forEach((el) => {
